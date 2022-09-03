@@ -13,7 +13,9 @@
             alt="Sample image"
           />
         </div>
-        <div class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 add-p">
+        <div
+          class="xl:ml-20 xl:w-5/12 lg:w-5/12 md:w-8/12 mb-12 md:mb-0 add-p dim"
+        >
           <form @submit.prevent="signUp()">
             <!-- Email input -->
             <div class="mb-6">
@@ -326,6 +328,9 @@ export default {
 
 <style>
 @media screen and (max-width: 600px) {
+  .dim {
+    width: 420px;
+  }
   .hidden-img {
     display: none;
   }

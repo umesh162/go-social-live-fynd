@@ -3,7 +3,7 @@
     <div class="flex justify-center">
       <div
         v-show="true"
-        class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
+        class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50 h-screen bg-opa"
       >
         <form class="max-w-2xl p-6 bg-white rounded-md shadow-xl">
           <div class="flex items-center justify-between w-96">
@@ -199,4 +199,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+@media (max-width: 575px) {
+  .bg-opa {
+    height: 107vh;
+  }
+}
+@media (min-width: 576px) {
+  .bg-opa {
+    height: 110vh;
+  }
+}
+</style>

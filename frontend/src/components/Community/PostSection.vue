@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border-slate-300 overflow-auto row-span-full scroll-hidden h-screen"
+    class="border-slate-300 overflow-auto row-span-full scroll-hidden h-screen post-hei"
   >
     <!-- border-y-2 -->
     <div class="">
@@ -107,7 +107,7 @@
             </div>
           </div>
 
-          <div class="bottom-24 sticky">
+          <div class="bottom-24 sticky btn-bottom">
             <button
               class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-semibold rounded-full text-md px-6 py-5 text-center absolute right-0 bottom-0"
               @click="toggle"
@@ -118,9 +118,20 @@
               <i class="fa-solid fa-plus fa-lg"></i>
             </button>
           </div>
+          <div class="max-screen">
+            <button
+              class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-semibold rounded-full text-md px-6 py-5 text-center absolute plus-btn"
+              @click="toggle"
+            >
+              <!-- class="bg-blue-400 px-6 py-5 rounded-full absolute bottom-2
+              right-0 hover:bg-slate-400 active:bg-slate-400 focus:outline-none" -->
+
+              <i class="fa-solid fa-plus fa-lg"></i>
+            </button>
+          </div>
         </div>
       </div>
-      <div v-else>
+      <div v-else class="">
         <div>
           <img
             src="../../assets/CommunityHome.png"
@@ -140,7 +151,7 @@
           </button>
         </div>
       </div>
-      <div v-show="visible" class="">
+      <div v-if="visible" class="">
         <CreatePost :toggle="toggle" />
       </div>
     </div>
@@ -256,5 +267,24 @@ export default {
 .scroll-hidden::-webkit-scrollbar {
   /* Firefox */
   display: none;
+}
+
+@media (max-width: 575px) {
+  .post-hei {
+    height: auto;
+  }
+  .btn-bottom {
+    display: none;
+  }
+  .plus-btn {
+    bottom: 12px;
+    right: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .max-screen {
+    display: none;
+  }
 }
 </style>

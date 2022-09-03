@@ -5,7 +5,7 @@
         v-show="true"
         class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50"
       >
-        <div class="max-w-2xl p-6 bg-white rounded-md shadow-xl w-3/5">
+        <div class="max-w-2xl p-6 bg-white rounded-md shadow-xl w-3/5 res-box">
           <div class="flex justify-between">
             <h3 class="text-2xl">Community List</h3>
             <svg
@@ -40,11 +40,11 @@
                 v-for="index in srcProd()"
                 :key="index._id"
               >
-                <div class="w-24 px-2">
+                <div class="w-24 px-2 res-img">
                   <img
                     :src="index.communityImage"
                     alt="Home community"
-                    class="h-16 w-24 rounded-full"
+                    class="h-16 w-24 rounded-full res-img"
                   />
                 </div>
                 <div class="mx-3">
@@ -56,9 +56,9 @@
                     {{ index.description }}
                   </p>
                 </div>
-                <div class="self-center w-44">
+                <div class="self-center w-44 res-list-btn">
                   <div
-                    class="self-center w-44"
+                    class="self-center"
                     v-if="
                       index.members.filter(
                         (_) => _.user._id == userDetails.user._id
@@ -69,7 +69,7 @@
                       Request Sent
                     </button>
                   </div>
-                  <div class="self-center w-44 text-center" v-else>
+                  <div class="self-center text-center" v-else>
                     <button
                       class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-semibold rounded-full text-md py-2 px-8 text-center"
                       @click.prevent="joinComm(index._id)"
@@ -159,5 +159,17 @@ export default {
 .cust-overflow-y-primary-color-grey::-webkit-scrollbar-track {
   box-shadow: inset 0 0 3px #31313126;
   border-radius: 6px;
+}
+
+@media (max-width: 575px) {
+  .res-box {
+    width: 95%;
+  }
+  .res-img {
+    max-width: none;
+  }
+  .res-list-btn {
+    width: auto;
+  }
 }
 </style>

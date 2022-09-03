@@ -12,7 +12,7 @@
         channel
       </p>
       <div class="text-center">
-        <div class="flex mx-auto justify-evenly mt-6 w-3/12">
+        <div class="flex mx-auto justify-evenly mt-6 w-3/12 res">
           <button
             type="button"
             class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-semibold rounded-lg text-md py-3 px-5 text-center w-40"
@@ -68,4 +68,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+/* Mobile Responsive */
+@media (max-width: 575px) {
+  .res {
+    width: 24rem;
+  }
+}
+</style>

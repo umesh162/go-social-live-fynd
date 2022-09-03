@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="height overflow-auto scroll-hidden">
+    <div class="height overflow-auto scroll-hidden hide-all">
       <div class="px-2">
         <div class="sticky top-0 bg-white p-5">
           <h3 class="text-center my-1 text-lg font-semibold">All Community</h3>
@@ -145,5 +145,11 @@ export default {
 
 .height {
   height: 445px;
+}
+
+@media (max-width: 575px) {
+  .hide-all {
+    display: none !important;
+  }
 }
 </style>
